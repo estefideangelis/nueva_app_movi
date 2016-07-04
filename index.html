@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>App Movivet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="jquery-1.12.2.min.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
+ 
+
+
+<!--<script src="jquery-1.12.2.min.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
+<!--<script src="inicio.js"></script>-->
+<link rel="stylesheet" type="text/css" href="./jquery.datetimepicker.css"/>
+<script type="text/javascript" src="app.js"></script>
+<link rel="stylesheet" href="jquery.mobile-1.4.5.css">
+<link rel="stylesheet" href="tema_movivet2.css"/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){ <!-- cuando el documento este listo sucede el evento ready objeto es el boton, evento clic, se deja sangria para q se entienda el codigo- funcion anonima, dentro contenido
+    $("#traer").click(function(){ <!--antes estaba el nombre de la etiqueta html o sea button pero comoa grego varios le pongo un id al button y o sea traer borrar y le pongo un numeral en vez de "Button" entre paréntesis va "#traer" (lo mismo con el div))-->
+        $.getJSON("http://movivet.tk/app/listaReservas.php", function(resultados){ 
+            for(i=0; i<resultados.length; i++){
+			$.each(resultados[i], function(i, campo){ <!-- van a entrar dos datos a esta funcion, o sea le doy do parametros i y campo ------ para relacionar con el ecommerce, pongo el link de listaproductos)-->
+                $("#lista").append(" "+campo+" "+"-//-"); <!-- que me agregue el dato campo y un espacio en blanco, con el <p> crea un párrafo y crea espacio en blacno uno abajo del otro -->
+            });
+			} <!-- fin bucle for-->
+        });
+    });
+
+
+ $("#borrar").click(function(){ 
+	//vaciar la pantalla
+	$("#lista").empty();
+    });
+}); 
+
+</script>
+</head>
+
+<body>
+
+
+
+
+<div class="content" id="presentacion" data-role="page" data-theme="c">
+<center><a href="#inicio1"><img src="images/presentacion.png" style="width:100%;"/></a></center>
+</div>
+
+<div class="content" id="presentacion1" data-role="page" data-theme="c">
+<div data-role="content">
+
+			<img src="images/presentacion1.png" style="width:100%;">
+			<a href="#" class="ui-btn ui-corner-all" id="intentarNuevamente">Intentar Nuevamente</a>
+	</div>
+</div>
+
+<div data-role="page" id="home">
+
+	<div data-role="header">
+		<h1>Bienvenido</h1>
+	</div>
+
+	<div data-role="content">	
+		<h2> Bienvenido a la aplicacion </h2>
+		<h3> Su usuario y password son válidos</h3>
+	</div>
+    
+
+</div>
+
+<div data-role="page" id="datos_inc"></div>
+
+<!--PAGINA INICIO SESIÓN -->
+
+<div id="inicio1" data-role="page" data-theme="c">
+<div data-role="header" data-theme="c">
+
+
+<a href="#popupMenu" data-rel="popup" data-transition="slideup"class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+
+
+<div data-role="popup" id="popupMenu" data-theme="c">
+        <ul data-role="listview">
+<!--data-inset="true"-->
+
+           <li data-icon="false"><a href="#inicio" style="text-decoration:none; color:#FFFFFF;"><img src="images/cuenta.png" class="ui-li-icon ui-corner-none;">Mi cuenta</a></li>
+           
+          
+        </ul>
+</div>
+<img src="images/3-prueba.jpg" style="width:100%;"/>
+<img src="images/2.jpg" style="width:100%;"/>
+
+</div>
+
+<div class="ui-grid-a" data-role="content" style="margin-top:5%;" data-theme="c">
+
+
+
+
+<a href="#inicio" style="text-transform: uppercase;" class="ui-btn ui-corner-all ui-btn-c ">Iniciar sesión</a>
+<a href="#servicios" style="text-transform: uppercase;" class="ui-btn ui-corner-all ui-btn-c ">Nuestros servicios</a>
+<a href="#reservar" style="text-transform: uppercase;" class="ui-btn ui-corner-all ui-btn-c ">Reservar</a>
+<a href="#ver" style="text-transform: uppercase;" class="ui-btn ui-corner-all ui-btn-c ">Mi cuenta</a>
+
+</div>
+
+ 
+<div style="font-size:10px; margin-top:5%;" data-role="footer" data-theme="c">
+<center><h2>Registrate y conocé los beneficios de MOVIVET</h2></center>
+</div>
+</div>
+
+<div id="servicios" data-role="page" data-theme="c">
+<div data-role="header" data-theme="c">
+
+<a href="#inicio1" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext"></a>
+
+<img src="images/3.jpg " style="width:100%;"/>
+</div>
+
+
+<div data-role="content" data-theme="c">
+<center><img src="images/sushititulo.jpg" style="width:100%;"/></center>
+<center><img src="images/servicios1.jpg"style="width:100%;"/></center>
+<center><img src="images/servicios3.jpg"style="width:100%;"/></center>
+<center><img src="images/servicios2.jpg" style="width:100%;"/></center>
+<center><img src="images/servicios4.jpg" style="width:100%;"/></center>
+
+</div>
+
+<div style="font-size:10px; margin-top:5%;" data-role="footer" data-theme="c">
+<center><h2>Registrate y conocé los beneficios de MOVIVET</h2></center>
+</div>
+
+</div>
+
+
+<div  data-role="page" id="inicio" class="content2" data-theme="c">
+
+
+<div data-role="header" data-theme="c">
+
+<a href="#inicio1" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext"></a>
+
+
+</div>
+<img src="images/3.jpg " style="width:100%;"/>
+<!--CONTENT-->
+<div  id="mydiv" data-role="content" data-theme="c"  class="mydiv">
+
+<!--HEADER-->
+<div data-role="navbar" data-theme="c">
+    <ul>
+<li><a href="#inicio" class="ui-btn-c ui-btn-active ui-state-persist ui-corner-left" style="margin-left:30px;">Ingresar</a></li><li><a href="#registrar" class="ui-btn-c" style="margin-right:30px;">Registrarse</a></li>
+    </ul>
+</div>
+
+<h1 id="tituloBienvenido">   </h1>    
+        
+                  
+                  
+<!-- para localstorage   <form id="formulario"><center><h2>INICIAR SESIÓN</h2></center><label class="ui-hidden-accessible">Usuario:</label> <input type="text" id="nombredeusuario" name="nombredeusuario" placeholder="Usuario:" data-theme="c" > <label class="ui-hidden-accessible">Contraseña:</label>
+ <input type="password" name="clave" id="clave" placeholder="Contraseña:" data-theme="c">
+  <input type="submit" value="Login" id="botonLogin">
+       
+    </form>-->
+
+<form id="formulario">
+<center><h2>INICIAR SESIÓN</h2></center>
+<div class="contenedor-inputs1">
+<label class="ui-hidden-accessible">Usuario:</label>
+<input type="text" placeholder="Usuario:" class="user-black" id="nombreUsuario" name="nombreUsuario" data-theme="c required">
+<label class="ui-hidden-accessible">Contraseña:</label><input type="password" class="lock-black" placeholder="Contraseña" id="password" name="password" data-theme="c" required>
+<input type="submit" value="Iniciar Sesión" id="botonLogin">
+<center><a href="#">He olvidado mi contraseña</a></center>
+</div>
+</form>
+
+
+
+
+
+
+
+	    </div>
+ <div data-role="footer" data-theme="c" style="font-size:13px;">
+<center><p>Registrate y conocé los beneficios de Movivet<p></center>
+</div>
+
+</div>
+
+<div id="reservar" data-role="page" data-theme="c" >
+	<div data-role="header" data-theme="c">
+
+<a href="#inicio1" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext"></a>
+
+
+</div>
+<img src="images/3.jpg" style="width:100%;"/>
+
+	<div data-role="content" data-theme="c">
+        <form class="form-reservar" action="reservar.php" method="post" onSubmit="return validar();">
+<h2 class="form_titulo">Reserva un turno para tu mascota</h2>
+<div class="contenedor-inputs">
+<!--<input type="date" id="fecha" name="fecha" placeholder="fecha" class="input-48" required>-->
+<input type="date" id="input_fecha" name="fecha" step="1" value="2016-07-04" max="2016-07-31" min="2016-07-04" class="input-48" required>
+<input type="time" id="input_hora" name="hora" step="1" value="10:00" max="18:00" min="10:00" class="input-48" required>
+
+<input type="submit" value="Reservar" class="btn-enviar">
+
+
+</div>
+</form>
+
+<button id="traer">Ver fechas no disponibles este mes</button>
+<button id="borrar">Cerrar</button>
+<div id="lista"></div>
+    </div> 
+    
+    
+    
+    <div data-role="footer" data-theme="c" style="font-size:13px;">
+<center><p>Registrate y conocé los beneficios de Movivet<p></center>
+</div>
+</div>
+
+<!---->
+
+<div id="ver" data-role="page" data-theme="c" >
+	<div data-role="header" data-theme="c">
+
+<a href="#inicio1" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext"></a>
+
+
+</div>
+<div data-role="content" data-theme="c" >
+<img src="images/3.jpg" style="width:100%;"/>
+<img src="images/baño.jpg" style="width:100%;"/>
+
+	<div class="ui-grid-a" data-role="content" style="margin-top:5%;" data-theme="c">
+
+<a href="#"  id="verReserva" style="text-transform: uppercase;" class="ui-btn ui-corner-all ui-btn-c ">Ver mis reservas</a>
+  
+    </div>
+   
+    
+  
+ </div>
+    <div data-role="footer" data-theme="c" style="font-size:13px;">
+<center><p>Registrate y conocé los beneficios de Movivet<p></center>
+</div>  
+</div>
+
+<!---->
+
+
+<!--PAGINA REGISTRAR -->
+
+<div  data-role="page" id="registrar"  data-theme="c">
+
+
+<div data-role="header" data-theme="c">
+
+<a href="#inicio1" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext"></a>
+
+
+</div>
+<img src="images/3.jpg " style="width:100%;"/>
+<!--CONTENT-->
+<div data-role="content" data-theme="c" >
+<!--HEADER-->
+<div data-role="navbar" data-theme="c">
+
+    <ul>
+<li><a href="#inicio" class="ui-btn-c" style="margin-left:30px;">Ingresar</a></li><li><a href="#registrar" class="ui-btn-c ui-btn-active ui-state-persist" style="margin-right:30px;">Registrarse</a></li>
+    </ul>
+</div>
+
+<form class="form-register" action="registrar.php" method="post" onSubmit="return validar();">
+<h2 class="form_titulo">CREA UNA CUENTA</h2>
+<div class="contenedor-inputs">
+<input type="text" id="nombre" name="nombre" placeholder="Nombre" class="input-48" required>
+<input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" class="input-48" required>
+<input type="email" id="correo" name="correo" placeholder="Email" class="input-100" required>
+<input type="text" id="usuario" name="usuario" placeholder="Usuario" class="input-48" required>
+<input type="password" id="clave" name="clave" placeholder="Contraseña" class="input-48" required>
+<input type="text" id="telefono" name="telefono" placeholder="Teléfono" class="input-48" required>
+<input type="text" id="direccion" name="direccion" placeholder="Dirección" class="input-48" required>
+<input type="submit" value="Registrar" class="btn-enviar">
+
+
+</div>
+</form>
+
+<!--FOOTER-->
+
+
+
+</div>
+<div data-role="footer" data-theme="c" style="font-size:13px; margin-top:30px;">
+<center><p>Registrate y conocé los beneficios de Movivet<p></center>
+</div>
+</div>
+
+
+
+
+
+
+
+
+    
+      <!--- CONTENIDO !-->
+		
+                
+              
+                  
+                    
+                
+		 
+            
+    	
+ 
+ </div>
+<!-- calendario --------- -->
+
+<script type="text/javascript" src="funciones.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="app_movivet.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>App Movivet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="jquery-1.12.2.min.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
+
+<!--<script src="jquery-1.12.2.min.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
+<!--<script src="inicio.js"></script>-->
+<link rel="stylesheet" type="text/css" href="./jquery.datetimepicker.css"/>
+
+<link rel="stylesheet" href="jquery.mobile-1.4.5.css">
+<link rel="stylesheet" href="tema_movivet2.css"/>
+
+
+</head>
+<body>
+
+<div id="reservar" data-role="page" data-theme="c" class="mydiv">
+	<div data-role="header" data-theme="c">
+
+<a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext"></a>
+
+
+</div>
+	<div data-role="content" data-theme="c">
+        <form class="form-reservar" action="reservar.php" method="post" onSubmit="return validar();">
+<h2 class="form_titulo">Reserva un turno para tu mascota</h2>
+<div class="contenedor-inputs">
+<!--<input type="date" id="fecha" name="fecha" placeholder="fecha" class="input-48" required>-->
+<input type="date" id="input_fecha" name="fecha" step="1" value="2016-07-04" max="2016-07-31" min="2016-07-04" class="input-48" required>
+<input type="time" id="input_hora" name="hora" step="1" value="10:00" max="18:00" min="10:00" class="input-48" required>
+
+<input type="submit" value="Reservar" class="btn-enviar">
+
+
+</div>
+</form>
+    </div> 
+    
+    
+    
+    <div data-role="footer" data-theme="c" style="font-size:13px;">
+<center><p>Registrate y conocé los beneficios de Movivet<p></center>
+</div>
+</div>
+
+
+</body>
+</html>
+
+
